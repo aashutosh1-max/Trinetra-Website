@@ -323,29 +323,11 @@
      if (!playBtn || !playGate || !video) return;
    
      playBtn.addEventListener('click', () => {
-       // Try to play video
-       video.style.display = 'block';
-       video.play().then(() => {
-         playGate.style.opacity = '0';
-         playGate.style.pointerEvents = 'none';
-         setTimeout(() => { playGate.style.display = 'none'; }, 400);
-       }).catch(() => {
-         // Video file not found — show friendly message
-         playGate.querySelector('p').textContent = '⚠ Add process.mp4 to view';
-         playGate.querySelector('small').textContent = 'Place the file in your website folder';
-         video.style.display = 'none';
-       });
-     });
-   
-     // Also handle video errors
-     video.addEventListener('error', () => {
-       video.style.display = 'none';
-       playGate.style.display = 'flex';
-       playGate.style.opacity = '1';
-       playGate.style.pointerEvents = 'auto';
-       const p = playGate.querySelector('p');
-       if (p) p.textContent = '⚠ Add process.mp4 file';
-     });
+  video.style.display = 'block';
+  playGate.style.opacity = '0';
+  playGate.style.pointerEvents = 'none';
+  setTimeout(() => { playGate.style.display = 'none'; }, 400);
+});
    })();
    
    
