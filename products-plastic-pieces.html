@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recycled Plastic Pieces | Trinetra Plastic Udhyog</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="products.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="product-page">
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.png" alt="Logo" class="nav-logo"/>
+        <div class="nav-brand-text">
+          <span class="nav-name">Trinetra Plastic Udhyog</span>
+          <span class="nav-since">Since 2069 B.S.</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#products" class="nav-link active">Products</a></li>
+        <li><a href="index.html#team" class="nav-link">Team</a></li>
+        <li><a href="index.html#location" class="nav-link">Location</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="index.html#products">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Recycled Plastic Pieces</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="prod-hero">
+    <div class="prod-hero-bg">
+      <div class="ph-orb ph-orb1"></div>
+      <div class="ph-orb ph-orb2"></div>
+    </div>
+    <div class="container">
+      <div class="prod-hero-content reveal-up">
+        <div class="section-tag">B2B Supply</div>
+        <h1 class="section-title">Recycled Plastic <em>Pieces</em></h1>
+        <p>High-quality recycled plastic granules/pieces produced from collected waste plastic across Nepal. Available in multiple colors and grades — ideal for manufacturers seeking reliable, affordable eco-friendly raw material.</p>
+        <div class="prod-hero-stats">
+          <div class="ph-stat"><i class="fas fa-recycle"></i><div><strong>100+</strong><small>Tons/Month</small></div></div>
+          <div class="ph-stat"><i class="fas fa-palette"></i><div><strong>Multiple</strong><small>Colors Available</small></div></div>
+          <div class="ph-stat"><i class="fas fa-truck"></i><div><strong>Nationwide</strong><small>Delivery</small></div></div>
+        </div>
+        <a href="#order-section" class="btn-primary">Order Now <i class="fas fa-arrow-down"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="prod-gallery section-pad">
+    <div class="container">
+      <div class="section-tag reveal-up">Our Products</div>
+      <h2 class="section-title centered reveal-up">Available <em>Colors & Grades</em></h2>
+      <p class="section-sub reveal-up">Click on any product image to view it in full detail. Select your preferred color when placing your order.</p>
+
+      <div class="gallery-grid">
+
+        <!-- Piece 1 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal1')">
+          <div class="gallery-img-wrap">
+            <img src="plastic_piece_1.png" alt="Recycled Plastic Piece - Color 1"/>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>View Full Image</span>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <h3>Plastic Pieces — Variant 1</h3>
+            <p>Dark Recycled granules — suitable for manufacturing various plastic products.</p>
+            <div class="gallery-tags">
+              <span><i class="fas fa-check-circle"></i> Bulk Available</span>
+              <span><i class="fas fa-check-circle"></i> Consistent Grade</span>
+            </div>
+            <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Pieces - Variant 1')">
+              <i class="fas fa-shopping-cart"></i> Order This
+            </button>
+          </div>
+        </div>
+
+        <!-- Piece 2 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal2')">
+          <div class="gallery-img-wrap">
+            <img src="plastic_piece_2.png" alt="Recycled Plastic Piece - Color 2"/>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>View Full Image</span>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <h3>Plastic Pieces — Variant 2</h3>
+            <p>Red Recycled granules — suitable for manufacturing various plastic products.</p>
+            <div class="gallery-tags">
+              <span><i class="fas fa-check-circle"></i> Bulk Available</span>
+              <span><i class="fas fa-check-circle"></i> Consistent Grade</span>
+            </div>
+            <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Pieces - Variant 2')">
+              <i class="fas fa-shopping-cart"></i> Order This
+            </button>
+          </div>
+        </div>
+
+        <!-- Piece 3 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+          <div class="gallery-img-wrap">
+            <img src="plastic_piece_3.png" alt="Recycled Plastic Piece - Color 3"/>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>View Full Image</span>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <h3>Plastic Pieces — Variant 3</h3>
+            <p>Green Recycled granules — suitable for manufacturing various plastic products.</p>
+            <div class="gallery-tags">
+              <span><i class="fas fa-check-circle"></i> Bulk Available</span>
+              <span><i class="fas fa-check-circle"></i> Consistent Grade</span>
+            </div>
+            <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Pieces - Variant 3')">
+              <i class="fas fa-shopping-cart"></i> Order This
+            </button>
+          </div>
+        </div>
+
+        <!-- Piece 4 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+            <div class="gallery-img-wrap">
+              <img src="plastic_piece_4.png" alt="Recycled Plastic Piece - Color 4"/>
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Full Image</span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3>Plastic Pieces — Variant 4</h3>
+              <p>Brown Recycled granules — suitable for manufacturing various plastic products.</p>
+              <div class="gallery-tags">
+                <span><i class="fas fa-check-circle"></i> Bulk Available</span>
+                <span><i class="fas fa-check-circle"></i> Consistent Grade</span>
+              </div>
+              <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Pieces - Variant 3')">
+                <i class="fas fa-shopping-cart"></i> Order This
+              </button>
+            </div>
+          </div>
+        
+          <!-- Piece 5 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+            <div class="gallery-img-wrap">
+              <img src="plastic_piece_5.png" alt="Recycled Plastic Piece - Color 5"/>
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Full Image</span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3>Plastic Pieces — Variant 5</h3>
+              <p>Yellow Recycled granules — suitable for manufacturing various plastic products.</p>
+              <div class="gallery-tags">
+                <span><i class="fas fa-check-circle"></i> Bulk Available</span>
+                <span><i class="fas fa-check-circle"></i> Consistent Grade</span>
+              </div>
+              <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Pieces - Variant 3')">
+                <i class="fas fa-shopping-cart"></i> Order This
+              </button>
+            </div>
+          </div>
+        
+        <!-- Piece 6 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+            <div class="gallery-img-wrap">
+              <img src="plastic_piece_6.png" alt="Recycled Plastic Piece - Color 6"/>
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Full Image</span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3>Plastic Pieces — Variant 6</h3>
+              <p>Blue Recycled granules — suitable for manufacturing various plastic products.</p>
+              <div class="gallery-tags">
+                <span><i class="fas fa-check-circle"></i> Bulk Available</span>
+                <span><i class="fas fa-check-circle"></i> Consistent Grade</span>
+              </div>
+              <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Pieces - Variant 3')">
+                <i class="fas fa-shopping-cart"></i> Order This
+              </button>
+            </div>
+          </div>  
+
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE MODALS -->
+  <div class="img-modal" id="modal1" onclick="closeModal('modal1')">
+    <div class="img-modal-inner">
+      <button class="modal-close" onclick="closeModal('modal1')"><i class="fas fa-times"></i></button>
+      <img src="plastic_piece_1.png" alt="Plastic Piece Variant 1"/>
+      <p>Recycled Plastic Pieces — Variant 1</p>
+    </div>
+  </div>
+  <div class="img-modal" id="modal2" onclick="closeModal('modal2')">
+    <div class="img-modal-inner">
+      <button class="modal-close" onclick="closeModal('modal2')"><i class="fas fa-times"></i></button>
+      <img src="plastic_piece_2.png" alt="Plastic Piece Variant 2"/>
+      <p>Recycled Plastic Pieces — Variant 2</p>
+    </div>
+  </div>
+  <div class="img-modal" id="modal3" onclick="closeModal('modal3')">
+    <div class="img-modal-inner">
+      <button class="modal-close" onclick="closeModal('modal3')"><i class="fas fa-times"></i></button>
+      <img src="plastic_piece_3.png" alt="Plastic Piece Variant 3"/>
+      <p>Recycled Plastic Pieces — Variant 3</p>
+    </div>
+  </div>
+
+  <!-- ORDER SECTION -->
+  <section class="prod-order section-pad" id="order-section">
+    <div class="container">
+      <div class="section-tag reveal-up">Place Your Order</div>
+      <h2 class="section-title centered reveal-up">Order Recycled Plastic <em>Pieces</em></h2>
+      <p class="section-sub reveal-up">Fill in your business details below. We will personally call you to confirm your order.</p>
+
+      <div class="order-layout">
+        <div class="order-steps-panel reveal-left">
+          <h3>How It Works</h3>
+          <div class="os-list">
+            <div class="os-item">
+              <div class="os-num">01</div>
+              <div class="os-text"><h4>Select & Order</h4><p>Choose your preferred color/variant and fill the form.</p></div>
+            </div>
+            <div class="os-item">
+              <div class="os-num">02</div>
+              <div class="os-text"><h4>Email Received</h4><p>Your order is sent directly to our team email.</p></div>
+            </div>
+            <div class="os-item">
+              <div class="os-num">03</div>
+              <div class="os-text"><h4>Personal Call</h4><p>We call you personally to confirm and finalize.</p></div>
+            </div>
+            <div class="os-item">
+              <div class="os-num">04</div>
+              <div class="os-text"><h4>Delivery Arranged</h4><p>Supply and delivery arranged as per your needs.</p></div>
+            </div>
+          </div>
+          <div class="os-note">
+            <i class="fas fa-shield-alt"></i>
+            <span>For registered businesses only. Personal confirmation required before processing.</span>
+          </div>
+          
+        </div>
+
+        <div class="order-form-panel reveal-right">
+          <form id="piecesOrderForm" class="the-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Business Name *</label>
+                <input type="text" name="business_name" placeholder="Your company name" required/>
+              </div>
+              <div class="form-group">
+                <label>Contact Person *</label>
+                <input type="text" name="contact_person" placeholder="Your full name" required/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" name="phone" placeholder="98XXXXXXXX" required/>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="your@email.com"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Preferred Color / Variant *</label>
+              <select name="variant" id="variantSelect" required>
+                <option value="">-- Select Variant --</option>
+                <option value="Plastic Pieces - Variant 1">Variant 1</option>
+                <option value="Plastic Pieces - Variant 2">Variant 2</option>
+                <option value="Plastic Pieces - Variant 3">Variant 3</option>
+                <option value="Plastic Pieces - Variant 4">Variant 4</option>
+                <option value="Plastic Pieces - Variant 5">Variant 5</option>
+                <option value="Plastic Pieces - Variant 6">Variant 6</option>
+                <option value="Custom / Mixed">Custom / Mixed (specify below)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Quantity Required * (kg/tons)</label>
+                <input type="text" name="quantity" placeholder="e.g. 500 kg / 2 tons" required/>
+              </div>
+              <div class="form-group">
+                <label>Delivery Location *</label>
+                <input type="text" name="location" placeholder="City / District" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Grade / Specification</label>
+              <input type="text" name="grade" placeholder="e.g. PP, PET, HDPE or any specific grade"/>
+            </div>
+            <div class="form-group">
+              <label>Customization / Additional Notes</label>
+              <textarea name="message" rows="3" placeholder="Describe any requirements or want multiple variants."></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-btn" id="piecesSubmitBtn">
+              <i class="fas fa-paper-plane"></i> Submit Order Request
+            </button>
+            <div id="piecesMsg" class="form-msg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col brand-col">
+        
+        <h3>Trinetra Plastic Udhyog</h3>
+        <p>Recycling Today for a Better Tomorrow</p>
+        <p class="footer-addr"><i class="fas fa-map-marker-alt"></i> Tilottama-06, Gorkotta, Rupandehi, Nepal</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="index.html#location">Location</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products-plastic-pieces.html">Recycled Plastic Pieces</a></li>
+          <li><a href="products-plastic-matte.html">Plastic Gundri (Matte)</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem">Contact</h4>
+        <ul>
+          <li><a href="tel:9857039041">+977 9857039041</a></li>
+          <li><a href="tel:9857030048">+977 9857030048</a></li>
+          <li><a href="tel:9857039645">+977 9857039645</a></li>
+          <li><a href="mailto:info.trinetraplastic@gmail.com">info.trinetraplastic@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="year"></span> Trinetra Plastic Udhyog. All Rights Reserved. · Est. 2069 B.S.</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/9779818129707" target="_blank" class="wa-float">
+    <i class="fab fa-whatsapp"></i>
+    <div class="wa-pulse"></div>
+    <span class="wa-tip">Chat with us!</span>
+  </a>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>

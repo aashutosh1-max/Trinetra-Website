@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plastic Gundri (Matte) | Trinetra Plastic Udhyog</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="products.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="product-page">
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.png" alt="Logo" class="nav-logo"/>
+        <div class="nav-brand-text">
+          <span class="nav-name">Trinetra Plastic Udhyog</span>
+          <span class="nav-since">Since 2069 B.S.</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#products" class="nav-link active">Products</a></li>
+        <li><a href="index.html#team" class="nav-link">Team</a></li>
+        <li><a href="index.html#location" class="nav-link">Location</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="index.html#products">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Plastic Gundri (Matte)</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="prod-hero featured-hero">
+    <div class="prod-hero-bg">
+      <div class="ph-orb ph-orb1"></div>
+      <div class="ph-orb ph-orb2"></div>
+    </div>
+    <div class="container">
+      <div class="prod-hero-content reveal-up">
+        <div class="section-tag" style="background:rgba(255,255,255,0.15);color:#fff;border-color:rgba(255,255,255,0.3);">Flagship Product</div>
+        <h1 class="section-title light">Plastic Gundri <em style="color:#81c784">(Matte)</em></h1>
+        <p style="color:rgba(255,255,255,0.8);">Our signature product — durable, long-lasting plastic mattes manufactured in-house using our own recycled granules. Available in multiple sizes. Wholesale orders welcome. Fully customizable as per your requirements.</p>
+        <div class="prod-hero-stats">
+          <div class="ph-stat dark-stat"><i class="fas fa-th"></i><div><strong>800–900</strong><small>Pieces/Day</small></div></div>
+          <div class="ph-stat dark-stat"><i class="fas fa-ruler-combined"></i><div><strong>Custom</strong><small>Sizes Available</small></div></div>
+          <div class="ph-stat dark-stat"><i class="fas fa-recycle"></i><div><strong>100%</strong><small>Recycled Plastic</small></div></div>
+        </div>
+        <a href="#order-section" class="btn-primary">Order Now <i class="fas fa-arrow-down"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="prod-gallery section-pad">
+    <div class="container">
+      <div class="section-tag reveal-up">Our Mattes</div>
+      <h2 class="section-title centered reveal-up">Plastic Gundri <em>Gallery</em></h2>
+      <p class="section-sub reveal-up">Browse our plastic matte collection. Click any image to view full detail. Choose your preferred design and size when ordering.</p>
+
+      <div class="gallery-grid">
+
+        <!-- Matte 1 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal1')">
+          <div class="gallery-img-wrap">
+            <img src="matte_1.png" alt="Plastic Matte 1"/>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>View Full Image</span>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <h3>Plastic Gundri — Style 1</h3>
+            <p>Durable, weather-resistant plastic matte made from 100% recycled plastic granules.</p>
+            <div class="gallery-tags">
+              <span><i class="fas fa-check-circle"></i> Custom Sizes</span>
+              <span><i class="fas fa-check-circle"></i> Bulk Orders</span>
+            </div>
+            <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Gundri - Style 1')">
+              <i class="fas fa-shopping-cart"></i> Order This
+            </button>
+          </div>
+        </div>
+
+        <!-- Matte 2 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal2')">
+          <div class="gallery-img-wrap">
+            <img src="matte_2.png" alt="Plastic Matte 2"/>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>View Full Image</span>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <h3>Plastic Gundri — Style 2</h3>
+            <p>Durable, weather-resistant plastic matte made from 100% recycled plastic granules.</p>
+            <div class="gallery-tags">
+              <span><i class="fas fa-check-circle"></i> Custom Sizes</span>
+              <span><i class="fas fa-check-circle"></i> Bulk Orders</span>
+            </div>
+            <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Gundri - Style 2')">
+              <i class="fas fa-shopping-cart"></i> Order This
+            </button>
+          </div>
+        </div>
+
+        <!-- Matte 3 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+          <div class="gallery-img-wrap">
+            <img src="matte_3.png" alt="Plastic Matte 3"/>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <span>View Full Image</span>
+            </div>
+          </div>
+          <div class="gallery-info">
+            <h3>Plastic Gundri — Style 3</h3>
+            <p>Durable, weather-resistant plastic matte made from 100% recycled plastic granules.</p>
+            <div class="gallery-tags">
+              <span><i class="fas fa-check-circle"></i> Custom Sizes</span>
+              <span><i class="fas fa-check-circle"></i> Bulk Orders</span>
+            </div>
+            <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Gundri - Style 3')">
+              <i class="fas fa-shopping-cart"></i> Order This
+            </button>
+          </div>
+        </div>
+
+        <!-- Matte 4 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+            <div class="gallery-img-wrap">
+              <img src="matte_4.png" alt="Plastic Matte 4"/>
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Full Image</span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3>Plastic Gundri — Style 4</h3>
+              <p>Durable, weather-resistant plastic matte made from 100% recycled plastic granules.</p>
+              <div class="gallery-tags">
+                <span><i class="fas fa-check-circle"></i> Custom Sizes</span>
+                <span><i class="fas fa-check-circle"></i> Bulk Orders</span>
+              </div>
+              <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Gundri - Style 3')">
+                <i class="fas fa-shopping-cart"></i> Order This
+              </button>
+            </div>
+          </div>
+        
+        <!-- Matte 5 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+            <div class="gallery-img-wrap">
+              <img src="matte_5.png" alt="Plastic Matte 3"/>
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Full Image</span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3>Plastic Gundri — Style 5</h3>
+              <p>Durable, weather-resistant plastic matte made from 100% recycled plastic granules.</p>
+              <div class="gallery-tags">
+                <span><i class="fas fa-check-circle"></i> Custom Sizes</span>
+                <span><i class="fas fa-check-circle"></i> Bulk Orders</span>
+              </div>
+              <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Gundri - Style 3')">
+                <i class="fas fa-shopping-cart"></i> Order This
+              </button>
+            </div>
+          </div>
+        
+        <!-- Matte 6 -->
+        <div class="gallery-card tilt-card reveal-up" onclick="openModal('modal3')">
+            <div class="gallery-img-wrap">
+              <img src="matte_6.png" alt="Plastic Matte 6"/>
+              <div class="gallery-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Full Image</span>
+              </div>
+            </div>
+            <div class="gallery-info">
+              <h3>Plastic Gundri — Style 6</h3>
+              <p>Durable, weather-resistant plastic matte made from 100% recycled plastic granules.</p>
+              <div class="gallery-tags">
+                <span><i class="fas fa-check-circle"></i> Custom Sizes</span>
+                <span><i class="fas fa-check-circle"></i> Bulk Orders</span>
+              </div>
+              <button class="gallery-order-btn" onclick="event.stopPropagation(); selectProduct('Plastic Gundri - Style 3')">
+                <i class="fas fa-shopping-cart"></i> Order This
+              </button>
+            </div>
+          </div>  
+
+      </div>
+
+      <!-- CUSTOMIZATION NOTE -->
+      <div class="custom-note reveal-up">
+        <div class="custom-note-icon"><i class="fas fa-paint-brush"></i></div>
+        <div>
+          <h4>Need a Custom Size or Design?</h4>
+          <p>We manufacture mattes as per your exact specifications — size, thickness, and color. Contact us directly or mention your requirements in the order form below.</p>
+        </div>
+        <a href="tel:9818129707" class="btn-primary" style="white-space:nowrap;">
+          <i class="fas fa-phone"></i> Call to Customize
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE MODALS -->
+  <div class="img-modal" id="modal1" onclick="closeModal('modal1')">
+    <div class="img-modal-inner">
+      <button class="modal-close" onclick="closeModal('modal1')"><i class="fas fa-times"></i></button>
+      <img src="matte_1.png" alt="Plastic Gundri Style 1"/>
+      <p>Plastic Gundri (Matte) — Style 1</p>
+    </div>
+  </div>
+  <div class="img-modal" id="modal2" onclick="closeModal('modal2')">
+    <div class="img-modal-inner">
+      <button class="modal-close" onclick="closeModal('modal2')"><i class="fas fa-times"></i></button>
+      <img src="matte_2.png" alt="Plastic Gundri Style 2"/>
+      <p>Plastic Gundri (Matte) — Style 2</p>
+    </div>
+  </div>
+  <div class="img-modal" id="modal3" onclick="closeModal('modal3')">
+    <div class="img-modal-inner">
+      <button class="modal-close" onclick="closeModal('modal3')"><i class="fas fa-times"></i></button>
+      <img src="matte_3.png" alt="Plastic Gundri Style 3"/>
+      <p>Plastic Gundri (Matte) — Style 3</p>
+    </div>
+  </div>
+
+  <!-- ORDER SECTION -->
+  <section class="prod-order section-pad" id="order-section">
+    <div class="container">
+      <div class="section-tag reveal-up">Place Your Order</div>
+      <h2 class="section-title centered reveal-up">Order Plastic Gundri <em>(Matte)</em></h2>
+      <p class="section-sub reveal-up">Fill in your details below. We'll personally call you to confirm your order and discuss customization.</p>
+
+      <div class="order-layout">
+        <div class="order-steps-panel reveal-left">
+          <h3>How It Works</h3>
+          <div class="os-list">
+            <div class="os-item">
+              <div class="os-num">01</div>
+              <div class="os-text"><h4>View & Select</h4><p>Browse photos above and select your preferred style and size.</p></div>
+            </div>
+            <div class="os-item">
+              <div class="os-num">02</div>
+              <div class="os-text"><h4>Submit Order</h4><p>Fill the form with your size, quantity and customization needs.</p></div>
+            </div>
+            <div class="os-item">
+              <div class="os-num">03</div>
+              <div class="os-text"><h4>Personal Call</h4><p>We call you to confirm design, size and delivery details.</p></div>
+            </div>
+            <div class="os-item">
+              <div class="os-num">04</div>
+              <div class="os-text"><h4>Manufactured & Delivered</h4><p>Your mattes are produced and delivered as per your order.</p></div>
+            </div>
+          </div>
+          <div class="os-note">
+            <i class="fas fa-paint-brush"></i>
+            <span>Custom sizes and colors available. Mention your specific requirements in the form.</span>
+          </div>
+          
+        </div>
+
+        <div class="order-form-panel reveal-right">
+          <form id="matteOrderForm" class="the-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Business Name *</label>
+                <input type="text" name="business_name" placeholder="Your company name" required/>
+              </div>
+              <div class="form-group">
+                <label>Contact Person *</label>
+                <input type="text" name="contact_person" placeholder="Your full name" required/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" name="phone" placeholder="98XXXXXXXX" required/>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="your@email.com"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Preferred Style *</label>
+              <select name="style" id="styleSelect" required>
+                <option value="">-- Select Style --</option>
+                <option value="Plastic Gundri - Style 1">Style 1</option>
+                <option value="Plastic Gundri - Style 2">Style 2</option>
+                <option value="Plastic Gundri - Style 3">Style 3</option>
+                <option value="Plastic Gundri - Style 4">Style 4</option>
+                <option value="Plastic Gundri - Style 5">Style 5</option>
+                <option value="Plastic Gundri - Style 6">Style 6</option>
+                <option value="Custom Design">Custom Design (specify below)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Size Required *</label>
+                <select name="size" required>
+                  <option value="">-- Select Size --</option>
+                  <option value="Medium (4x6 ft)">Medium (4×6 ft)</option>
+                  <option value="Large (5x7 ft)">Large (5×7 ft)</option>
+                  <option value="Custom Size">Custom Size (specify below)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Quantity Required *</label>
+                <input type="text" name="quantity" placeholder="e.g. 200 pieces" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Delivery Location *</label>
+              <input type="text" name="location" placeholder="City / District" required/>
+            </div>
+            <div class="form-group">
+              <label>Color Preference</label>
+              <input type="text" name="color" placeholder="e.g. Green, Blue, Mixed or as available"/>
+            </div>
+            <div class="form-group">
+              <label>Customization / Additional Notes</label>
+              <textarea name="message" rows="3" placeholder="Custom size dimensions, thickness, design preferences, or any other requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-btn" id="matteSubmitBtn">
+              <i class="fas fa-paper-plane"></i> Submit Order Request
+            </button>
+            <div id="matteMsg" class="form-msg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col brand-col">
+        <h3>Trinetra Plastic Udhyog</h3>
+        <p>Recycling Today for a Better Tomorrow</p>
+        <p class="footer-addr"><i class="fas fa-map-marker-alt"></i> Tilottama-06, Gorkotta, Rupandehi, Nepal</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="index.html#location">Location</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products-plastic-pieces.html">Recycled Plastic Pieces</a></li>
+          <li><a href="products-plastic-matte.html">Plastic Gundri (Matte)</a></li>
+        </ul>
+        <h4 style="margin-top:1.5rem">Contact</h4>
+        <ul>
+          <li><a href="tel:9857039041">+977 9857039041</a></li>
+          <li><a href="tel:9857030048">+977 9857030048</a></li>
+          <li><a href="tel:9857039645">+977 9857039645</a></li>
+          <li><a href="mailto:info.trinetraplastic@gmail.com">info.trinetraplastic@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="year"></span> Trinetra Plastic Udhyog. All Rights Reserved. · Est. 2069 B.S.</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/9779818129707" target="_blank" class="wa-float">
+    <i class="fab fa-whatsapp"></i>
+    <div class="wa-pulse"></div>
+    <span class="wa-tip">Chat with us!</span>
+  </a>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>
