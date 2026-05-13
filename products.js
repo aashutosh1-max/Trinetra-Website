@@ -82,117 +82,120 @@ function selectProduct(name) {
   }
 }
 
-/* ORDER FORM — PLASTIC PIECES — EmailJS */
-(function () {
+/* EMAILJS INIT — runs once when DOM is ready, works for both pages */
+document.addEventListener('DOMContentLoaded', function () {
   emailjs.init('cfVhhCDmmGnSUcV-F');
 
-  const form = document.getElementById('piecesOrderForm');
-  const msgEl = document.getElementById('piecesMsg');
-  const btn = document.getElementById('piecesSubmitBtn');
-  if (!form) return;
+  /* ORDER FORM — PLASTIC PIECES */
+  (function () {
+    const form = document.getElementById('piecesOrderForm');
+    const msgEl = document.getElementById('piecesMsg');
+    const btn = document.getElementById('piecesSubmitBtn');
+    if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const d = new FormData(form);
-    const business = d.get('business_name');
-    const person = d.get('contact_person');
-    const phone = d.get('phone');
-    const variant = d.get('variant');
-    const quantity = d.get('quantity');
-    const location = d.get('location');
+      const d = new FormData(form);
+      const business = d.get('business_name');
+      const person = d.get('contact_person');
+      const phone = d.get('phone');
+      const variant = d.get('variant');
+      const quantity = d.get('quantity');
+      const location = d.get('location');
 
-    if (!business || !person || !phone || !variant || !quantity || !location) {
-      showMsg(msgEl, 'error', '⚠ Please fill all required fields marked with *');
-      return;
-    }
+      if (!business || !person || !phone || !variant || !quantity || !location) {
+        showMsg(msgEl, 'error', '⚠ Please fill all required fields marked with *');
+        return;
+      }
 
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-    const params = {
-      business_name:   d.get('business_name'),
-      contact_person:  d.get('contact_person'),
-      phone:           d.get('phone'),
-      email:           d.get('email') || 'Not provided',
-      variant:         d.get('variant'),
-      quantity:        d.get('quantity'),
-      grade:           d.get('grade') || 'Not specified',
-      location:        d.get('location'),
-      message:         d.get('message') || 'None',
-    };
+      const params = {
+        business_name:  d.get('business_name'),
+        contact_person: d.get('contact_person'),
+        phone:          d.get('phone'),
+        email:          d.get('email') || 'Not provided',
+        variant:        d.get('variant'),
+        quantity:       d.get('quantity'),
+        grade:          d.get('grade') || 'Not specified',
+        location:       d.get('location'),
+        message:        d.get('message') || 'None',
+      };
 
-    emailjs.send('service_5qtpqp9', 'template_gsbdv7t', params)
-      .then(() => {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
-        showMsg(msgEl, 'success', '✅ Order submitted successfully! We will call you personally to confirm.');
-        form.reset();
-      })
-      .catch((err) => {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
-        showMsg(msgEl, 'error', '❌ Failed to send. Please call us directly at +977 9857039041');
-        console.error('EmailJS error:', err);
-      });
-  });
-})();
+      emailjs.send('service_5qtpqp9', 'template_gsbdv7t', params)
+        .then(() => {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
+          showMsg(msgEl, 'success', '✅ Order submitted successfully! We will call you personally to confirm.');
+          form.reset();
+        })
+        .catch((err) => {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
+          showMsg(msgEl, 'error', '❌ Failed to send. Please call us directly at +977 9857039041');
+          console.error('EmailJS error:', err);
+        });
+    });
+  })();
 
-/* ORDER FORM — PLASTIC MATTE — EmailJS */
-(function () {
-  const form = document.getElementById('matteOrderForm');
-  const msgEl = document.getElementById('matteMsg');
-  const btn = document.getElementById('matteSubmitBtn');
-  if (!form) return;
+  /* ORDER FORM — PLASTIC MATTE */
+  (function () {
+    const form = document.getElementById('matteOrderForm');
+    const msgEl = document.getElementById('matteMsg');
+    const btn = document.getElementById('matteSubmitBtn');
+    if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const d = new FormData(form);
-    const business = d.get('business_name');
-    const person = d.get('contact_person');
-    const phone = d.get('phone');
-    const style = d.get('style');
-    const size = d.get('size');
-    const quantity = d.get('quantity');
-    const location = d.get('location');
+      const d = new FormData(form);
+      const business = d.get('business_name');
+      const person = d.get('contact_person');
+      const phone = d.get('phone');
+      const style = d.get('style');
+      const size = d.get('size');
+      const quantity = d.get('quantity');
+      const location = d.get('location');
 
-    if (!business || !person || !phone || !style || !size || !quantity || !location) {
-      showMsg(msgEl, 'error', '⚠ Please fill all required fields marked with *');
-      return;
-    }
+      if (!business || !person || !phone || !style || !size || !quantity || !location) {
+        showMsg(msgEl, 'error', '⚠ Please fill all required fields marked with *');
+        return;
+      }
 
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-    const params = {
-      business_name:   d.get('business_name'),
-      contact_person:  d.get('contact_person'),
-      phone:           d.get('phone'),
-      email:           d.get('email') || 'Not provided',
-      style:           d.get('style'),
-      size:            d.get('size'),
-      quantity:        d.get('quantity'),
-      color:           d.get('color') || 'Not specified',
-      location:        d.get('location'),
-      message:         d.get('message') || 'None',
-    };
+      const params = {
+        business_name:  d.get('business_name'),
+        contact_person: d.get('contact_person'),
+        phone:          d.get('phone'),
+        email:          d.get('email') || 'Not provided',
+        style:          d.get('style'),
+        size:           d.get('size'),
+        quantity:       d.get('quantity'),
+        color:          d.get('color') || 'Not specified',
+        location:       d.get('location'),
+        message:        d.get('message') || 'None',
+      };
 
-    emailjs.send('service_5qtpqp9', 'template_lnhmy4s', params)
-      .then(() => {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
-        showMsg(msgEl, 'success', '✅ Order submitted successfully! We will call you personally to confirm.');
-        form.reset();
-      })
-      .catch((err) => {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
-        showMsg(msgEl, 'error', '❌ Failed to send. Please call us directly at +977 9857039041');
-        console.error('EmailJS error:', err);
-      });
-  });
-})();
+      emailjs.send('service_5qtpqp9', 'template_lnhmy4s', params)
+        .then(() => {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
+          showMsg(msgEl, 'success', '✅ Order submitted successfully! We will call you personally to confirm.');
+          form.reset();
+        })
+        .catch((err) => {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
+          showMsg(msgEl, 'error', '❌ Failed to send. Please call us directly at +977 9857039041');
+          console.error('EmailJS error:', err);
+        });
+    });
+  })();
+});
 
 /* HELPER */
 function showMsg(el, type, text) {
