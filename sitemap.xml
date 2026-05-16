@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ═══════════════════════════════════════════════════════════════
+     sitemap.xml — save this as sitemap.xml in your ROOT folder
+     (same folder as index.html)
+     Submit this URL to Google Search Console:
+     https://trinetraplasticudhyog.com.np/sitemap.xml
+     ═══════════════════════════════════════════════════════════════ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- HOME PAGE -->
+  <url>
+    <loc>https://trinetraplasticudhyog.com.np/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/logo1.png</image:loc>
+      <image:title>Trinetra Plastic Udhyog - Plastic Recycling Factory Nepal</image:title>
+    </image:image>
+  </url>
+
+  <!-- PLASTIC GUNDRI (MATTE) PAGE -->
+  <url>
+    <loc>https://trinetraplasticudhyog.com.np/products-plastic-matte.html</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/matte_1.png</image:loc>
+      <image:title>Plastic Gundri Matte Style 1 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/matte_2.png</image:loc>
+      <image:title>Plastic Gundri Matte Style 2 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/matte_3.png</image:loc>
+      <image:title>Plastic Gundri Matte Style 3 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/matte_4.png</image:loc>
+      <image:title>Plastic Gundri Matte Style 4 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/matte_5.png</image:loc>
+      <image:title>Plastic Gundri Matte Style 5 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/matte_6.png</image:loc>
+      <image:title>Plastic Gundri Matte Style 6 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+  </url>
+
+  <!-- RECYCLED PLASTIC PIECES / DANA PAGE -->
+  <url>
+    <loc>https://trinetraplasticudhyog.com.np/products-plastic-pieces.html</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/plastic_piece_1.png</image:loc>
+      <image:title>Recycled Plastic Dana Variant 1 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/plastic_piece_2.png</image:loc>
+      <image:title>Recycled Plastic Dana Variant 2 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/plastic_piece_3.png</image:loc>
+      <image:title>Recycled Plastic Dana Variant 3 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/plastic_piece_4.png</image:loc>
+      <image:title>Recycled Plastic Dana Variant 4 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/plastic_piece_5.png</image:loc>
+      <image:title>Recycled Plastic Dana Variant 5 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://trinetraplasticudhyog.com.np/plastic_piece_6.png</image:loc>
+      <image:title>Recycled Plastic Dana Variant 6 - Trinetra Plastic Udhyog</image:title>
+    </image:image>
+  </url>
+
+</urlset>

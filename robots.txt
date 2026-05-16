@@ -1,0 +1,13 @@
+# ═══════════════════════════════════════════════════════════════
+# robots.txt — save this as robots.txt in your ROOT folder
+# (same folder as index.html)
+# ═══════════════════════════════════════════════════════════════
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://trinetraplasticudhyog.com.np/sitemap.xml
+
+# Disallow any temp or private folders (add if needed)
+# Disallow: /private/
