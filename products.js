@@ -69,10 +69,26 @@ document.addEventListener('keydown', (e) => {
 
 /* SELECT PRODUCT FROM GALLERY */
 function selectProduct(name) {
-  const select = document.getElementById('variantSelect') || document.getElementById('styleSelect');
-  if (select) {
-    for (let opt of select.options) {
-      if (opt.value === name) { select.value = name; break; }
+  // Derive checkbox value from gallery button name
+  let checkVal = null;
+  if (name.startsWith('Plastic Gundri - ')) {
+    checkVal = name.replace('Plastic Gundri - ', ''); // "Style 3"
+  } else if (name.startsWith('Plastic Pieces - Variant ')) {
+    const num = name.replace('Plastic Pieces - Variant ', '');
+    const map = {'1':'Black - Variant 1','2':'Red - Variant 2','3':'Green - Variant 3','4':'Brown - Variant 4','5':'Yellow - Variant 5','6':'Blue - Variant 6'};
+    checkVal = map[num] || null;
+  }
+  if (checkVal) {
+    const picker = document.getElementById('stylePicker') || document.getElementById('variantPicker');
+    if (picker) {
+      picker.querySelectorAll('.sp-check').forEach(cb => {
+        if (cb.value === checkVal) {
+          cb.checked = true;
+          cb.closest('.sp-row').classList.add('sp-row-active');
+          const qty = cb.closest('.sp-row').querySelector('.sp-qty');
+          if (qty && !qty.value) setTimeout(() => qty.focus(), 400);
+        }
+      });
     }
   }
   const orderSection = document.getElementById('order-section');
@@ -93,34 +109,75 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('piecesSubmitBtn');
     if (!form) return;
 
+    // Highlight row when checkbox toggled
+    document.querySelectorAll('#variantPicker .sp-check').forEach(cb => {
+      cb.addEventListener('change', () => {
+        cb.closest('.sp-row').classList.toggle('sp-row-active', cb.checked);
+      });
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const d = new FormData(form);
       const business = d.get('business_name');
-      const person = d.get('contact_person');
-      const phone = d.get('phone');
-      const variant = d.get('variant');
-      const quantity = d.get('quantity');
+      const person   = d.get('contact_person');
+      const phone    = d.get('phone');
       const location = d.get('location');
 
-      if (!business || !person || !phone || !variant || !quantity || !location) {
+      if (!business || !person || !phone || !location) {
         showMsg(msgEl, 'error', '⚠ Please fill all required fields marked with *');
+        return;
+      }
+
+      // Collect checked variants
+      const rows = document.querySelectorAll('#variantPicker .sp-row');
+      const selectedVariants = [];
+      rows.forEach(row => {
+        const cb    = row.querySelector('.sp-check');
+        const qty   = row.querySelector('.sp-qty');
+        const grade = row.querySelector('.sp-size');
+        if (cb.checked) {
+          const qtyVal = qty.value.trim();
+          if (!qtyVal) {
+            qty.style.borderColor = '#e53935';
+            qty.focus();
+          } else {
+            qty.style.borderColor = '';
+            selectedVariants.push(`${cb.value} | Grade: ${grade.value} | Qty: ${qtyVal}`);
+          }
+        }
+      });
+
+      if (selectedVariants.length === 0) {
+        document.getElementById('variantPickerError').style.display = 'block';
+        return;
+      }
+      document.getElementById('variantPickerError').style.display = 'none';
+
+      const missingQty = [...document.querySelectorAll('#variantPicker .sp-check:checked')].some(cb => {
+        const qty = cb.closest('.sp-row').querySelector('.sp-qty');
+        return !qty.value.trim();
+      });
+      if (missingQty) {
+        showMsg(msgEl, 'error', '⚠ Please enter quantity for all selected variants.');
         return;
       }
 
       btn.disabled = true;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
+      const orderSummary = selectedVariants.join('\n');
+
       const params = {
-        business_name:  d.get('business_name'),
-        contact_person: d.get('contact_person'),
-        phone:          d.get('phone'),
+        business_name:  business,
+        contact_person: person,
+        phone:          phone,
         email:          d.get('email') || 'Not provided',
-        variant:        d.get('variant'),
-        quantity:       d.get('quantity'),
-        grade:          d.get('grade') || 'Not specified',
-        location:       d.get('location'),
+        variant:        orderSummary,
+        quantity:       `${selectedVariants.length} variant(s) — see details above`,
+        grade:          '(per variant above)',
+        location:       location,
         message:        d.get('message') || 'None',
       };
 
@@ -130,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
           showMsg(msgEl, 'success', '✅ Order submitted successfully! We will call you personally to confirm.');
           form.reset();
+          document.querySelectorAll('#variantPicker .sp-row').forEach(r => r.classList.remove('sp-row-active'));
         })
         .catch((err) => {
           btn.disabled = false;
@@ -147,36 +205,77 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('matteSubmitBtn');
     if (!form) return;
 
+    // Highlight row when checkbox toggled
+    document.querySelectorAll('#stylePicker .sp-check').forEach(cb => {
+      cb.addEventListener('change', () => {
+        cb.closest('.sp-row').classList.toggle('sp-row-active', cb.checked);
+      });
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const d = new FormData(form);
-      const business = d.get('business_name');
-      const person = d.get('contact_person');
-      const phone = d.get('phone');
-      const style = d.get('style');
-      const size = d.get('size');
-      const quantity = d.get('quantity');
-      const location = d.get('location');
+      const business  = d.get('business_name');
+      const person    = d.get('contact_person');
+      const phone     = d.get('phone');
+      const location  = d.get('location');
 
-      if (!business || !person || !phone || !style || !size || !quantity || !location) {
+      if (!business || !person || !phone || !location) {
         showMsg(msgEl, 'error', '⚠ Please fill all required fields marked with *');
+        return;
+      }
+
+      // Collect checked styles
+      const rows = document.querySelectorAll('#stylePicker .sp-row');
+      const selectedStyles = [];
+      rows.forEach(row => {
+        const cb  = row.querySelector('.sp-check');
+        const qty = row.querySelector('.sp-qty');
+        const sz  = row.querySelector('.sp-size');
+        if (cb.checked) {
+          const qtyVal = qty.value.trim();
+          if (!qtyVal) {
+            qty.style.borderColor = '#e53935';
+            qty.focus();
+          } else {
+            qty.style.borderColor = '';
+            selectedStyles.push(`${cb.value} | Size: ${sz.value} | Qty: ${qtyVal} pcs`);
+          }
+        }
+      });
+
+      if (selectedStyles.length === 0) {
+        document.getElementById('stylePickerError').style.display = 'block';
+        return;
+      }
+      document.getElementById('stylePickerError').style.display = 'none';
+
+      // Check all checked rows have qty filled
+      const missingQty = [...document.querySelectorAll('#stylePicker .sp-check:checked')].some(cb => {
+        const qty = cb.closest('.sp-row').querySelector('.sp-qty');
+        return !qty.value.trim();
+      });
+      if (missingQty) {
+        showMsg(msgEl, 'error', '⚠ Please enter quantity for all selected styles.');
         return;
       }
 
       btn.disabled = true;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
+      const orderSummary = selectedStyles.join('\n');
+
       const params = {
-        business_name:  d.get('business_name'),
-        contact_person: d.get('contact_person'),
-        phone:          d.get('phone'),
+        business_name:  business,
+        contact_person: person,
+        phone:          phone,
         email:          d.get('email') || 'Not provided',
-        style:          d.get('style'),
-        size:           d.get('size'),
-        quantity:       d.get('quantity'),
+        style:          orderSummary,
+        size:           '(per style above)',
+        quantity:       `${selectedStyles.length} style(s) — see details above`,
         color:          d.get('color') || 'Not specified',
-        location:       d.get('location'),
+        location:       location,
         message:        d.get('message') || 'None',
       };
 
@@ -186,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Order Request';
           showMsg(msgEl, 'success', '✅ Order submitted successfully! We will call you personally to confirm.');
           form.reset();
+          document.querySelectorAll('#stylePicker .sp-row').forEach(r => r.classList.remove('sp-row-active'));
         })
         .catch((err) => {
           btn.disabled = false;
